@@ -12,3 +12,4 @@ include_directories(
 
 file(GLOB SRCS "src/*.cpp")
 add_executable(test ${SRCS})
+target_link_libraries(test -lpthread)
