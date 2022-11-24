@@ -18,6 +18,7 @@
 #include <mutex>
 #include <functional>
 #include <future>
+#include <chrono>
 #include "Athena.h"
 
 #define ATHENA (Athena::getInstance())
