@@ -17,6 +17,6 @@ int poll_state(bool *p, int timeout /*ms*/) {
 
 int test_poll_state() {
     bool p = false;
-    poll_state(&p, 3 * 1000);
+    poll_state(&p, 1 * 1000);
     return 0;
 }
