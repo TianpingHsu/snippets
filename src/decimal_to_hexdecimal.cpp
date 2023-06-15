@@ -16,5 +16,6 @@ std::string decimal_to_hexadecimal(int n) {
 
 int test_dec_hex() {
     int n = -1;
-    std::cout << decimal_to_hexadecimal(n);
+    TRACE("%s\n", decimal_to_hexadecimal(n).c_str());
+    return 0;
 }

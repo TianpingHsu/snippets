@@ -11,6 +11,7 @@ string getAddress(const void *p) {
 
 int test_getAddress() {
     int *p = new int;
-    std::cout << getAddress(p) << std::endl;
+    TRACE("%s\n", getAddress(p).c_str());
+    delete p;
     return 0;
 }

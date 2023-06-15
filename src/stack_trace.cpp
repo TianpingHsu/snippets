@@ -1,6 +1,7 @@
 #include <execinfo.h>
 #include <iostream>
 #include <sstream>
+#include "common.h"
 
 #define printStackTrace() do { \
          const int MAX_FRAMES = 64; \
@@ -13,17 +14,14 @@
              oss << "\t" << symbols[i] << std::endl; \
          } \
          free(symbols); \
-         printf("%s huaizhi bt: %s\n", __FUNCTION__, oss.str().c_str()); \
+         printf("%s bt: %s\n", __FUNCTION__, oss.str().c_str()); \
      } while(0)
 
 
-void foo() {
+int test_bt() {
+    TRACE(">>>>> test_bt\n");
     printStackTrace();
-}
-
-int main()
-{
-    foo();
-
+    TRACE("<<<<< test_bt\n");
     return 0;
 }
+
