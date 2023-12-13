@@ -23,13 +23,17 @@
 
 #define ATHENA (Athena::getInstance())
 
-#define STDOUT() (std::cout << __FILE__ << "["<<__LINE__ <<"]: " <<  __FUNCTION__ << "  ")
+#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 
-#define TRACE(fmt, ...) printf("%s:%d %s " fmt, __FILE__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
+#define STDOUT() (std::cout << __FILENAME__ << "["<<__LINE__ <<"]: " <<  __FUNCTION__ << "  ")
+
+#define TRACE(fmt, ...) printf("%s:%d %s " fmt, __FILENAME__, __LINE__, __FUNCTION__, ##__VA_ARGS__)
 
 #define STRINGIFY(x) #x
 
 #define EXPRESSION(x) #x " => " STRINGIFY(x)
+
+#define MAX_BUFFER_SIZE_FOR_LOG 1024
 
 // https://renenyffenegger.ch/notes/development/languages/C-C-plus-plus/preprocessor/macros/__VA_ARGS__/count-arguments
 // https://stackoverflow.com/questions/2124339/c-preprocessor-va-args-number-of-arguments
@@ -54,3 +58,4 @@
          19,18,17,16,15,14,13,12,11,10, \
          9,8,7,6,5,4,3,2,1,0
 #endif
+
